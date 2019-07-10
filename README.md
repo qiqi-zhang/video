@@ -4,7 +4,7 @@
 
 
 
-1.今天爬了很多坑，一直想给video和source 的src赋值；总是赋值不到；替大家爬了一个小时的坑，给大家瞅瞅；
+1.今天爬了很多坑，一直想给video和source 的src动态赋值；其实赋值是赋值上了，但是默认打开浏览器后，就不会再调起video了 ，所以他识别不到新赋值的值，替大家爬了一个小时的坑，给大家瞅瞅；
 
  
 
@@ -20,13 +20,10 @@
 注意：url需为是安卓或者ios通过http带过来的参数；
 
  
-
- 
-
 步骤二  动态追加一个video（文件已经写了video动态赋值后不会播放，所以需要动态append）
 
     var sourceDom = $("<video src=\""+ urlPara2("url") +"\" loop='loop' autoplay='autoplay' id='player1' type='video/mp4' controls='controls' preload='none'> </video>");
-        $('#video1').append(sourceDom)
+    $('#video1').append(sourceDom);
 
  
 
