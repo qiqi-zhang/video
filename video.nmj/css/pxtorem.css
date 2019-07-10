@@ -1,0 +1,71 @@
+/* media */
+/* 窗口宽度<320 */
+@media screen and (max-width:319px) {
+    html {
+        font-size: 19.9375px
+    }
+}
+/* 窗口宽度>320 */
+@media screen and (min-width:320px) and (max-width:359px) {
+    html {
+        font-size: 20px
+    }
+}
+/* 窗口宽度>360 */
+@media screen and (min-width:360px) and (max-width:374px) {
+    html {
+        font-size: 22.5px
+    }
+}
+/* 窗口宽度>375 */
+@media screen and (min-width:375px) and (max-width:383px) {
+    html {
+        font-size: 23.4375px
+    }
+}
+/* 窗口宽度>384 */
+@media screen and (min-width:384px) and (max-width:399px) {
+    html {
+        font-size: 24px
+    }
+}
+/* 窗口宽度>400 */
+@media screen and (min-width:400px) and (max-width:413px) {
+    html {
+        font-size: 25px
+    }
+}
+/* 窗口宽度>414 */
+@media screen and (min-width:414px) and (max-width:423px) {
+    html {
+        font-size: 25.875px
+    }
+}
+/* 窗口宽度>424 */
+@media screen and (min-width:424px) and (max-width:539px) {
+    html {
+        font-size: 26.5px
+    }
+}
+/* 窗口宽度>540，文档宽度最大为540 */
+@media screen and (min-width:540px) {
+    html {
+        font-size: 33.75px
+    }
+}
+/* 横屏 */
+@media screen and (orientation:landscape){
+
+}
+/* 竖屏 */
+@media screen and (orientation:portrait){
+
+}
+/* windows UI 贴靠 */
+@media screen and (-ms-view-state:snapped){
+    
+}
+/* 打印 */
+@media print{
+    
+}
