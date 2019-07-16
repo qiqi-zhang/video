@@ -47,36 +47,71 @@
 <script src="js/fastclick.js"></script>
 <script src="js/pxtorem.js"></script>
 <script src="js/mediaelement-and-player.min.js"></script>
+	<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+	<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>	
+	<script>
+		new Vue({
+			el: '#video2',
+			data: {
+				img: '',
+				url: "",
+				canplay: true,
+			},
+			methods: {
+				urlPara2(name) {
+					var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+					var r = window.location.search.substr(1).match(reg);
+					if (r != null) return r[2];
+					return null;
+				},
+			},
+			mounted() {
+				this.url = this.urlPara2('url');
+				this.img = this.urlPara2('img')
+				console.log(this.img)
+				// this.playVideo();
+				document.addEventListener('WeixinJSBridgeReady', function () {
+					document.getElementById('player1').play();
+				}, false);
+			},
+		})
+	</script>
+	
+	
+	
+	
+	
+	
 <script type="text/javascript">
-	$('audio,video').mediaelementplayer({
-		success: function(player, node) {
-			$('#' + node.id + '-mode').html('mode: ' + player.pluginType);
-		}
-	});
-	$('#stopall').click(function() {
-		$('video, audio').each(function() {
-			$(this)[0].player.pause();		  
-		});
-	});
-	$(function () {
-		function urlPara2(name) {
-			var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-			var r = window.location.search.substr(1).match(reg);
-			if (r != null) return r[2];
-			return null;
-		};
+// 	$('audio,video').mediaelementplayer({
+// 		success: function(player, node) {
+// 			$('#' + node.id + '-mode').html('mode: ' + player.pluginType);
+// 		}
+// 	});
+// 	$('#stopall').click(function() {
+// 		$('video, audio').each(function() {
+// 			$(this)[0].player.pause();		  
+// 		});
+// 	});
+// 	$(function () {
+// 		function urlPara2(name) {
+// 			var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+// 			var r = window.location.search.substr(1).match(reg);
+// 			if (r != null) return r[2];
+// 			return null;
+// 		};
 		
-		var sourceDom = $("<video src=\""+ urlPara2("url") +"\" loop='loop' autoplay='autoplay' id='player1' type='video/mp4' controls='controls' preload='none'> </video>");
-		$('#video1').append(sourceDom)
+// 		var sourceDom = $("<video src=\""+ urlPara2("url") +"\" loop='loop' autoplay='autoplay' id='player1' type='video/mp4' controls='controls' preload='none'> </video>");
+// 		$('#video1').append(sourceDom)
 
 
 		
-		if  (screen.height == 812) {
-        $("#video1").remove();//此分辨率下你需要的操作
-    } else {
-        $("#video2").remove();//默认操作
-    }
-});	
+// 		if  (screen.height == 812) {
+//         $("#video1").remove();//此分辨率下你需要的操作
+//     } else {
+//         $("#video2").remove();//默认操作
+//     }
+// });	
 </script>
 </body>
 </html>
