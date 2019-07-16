@@ -34,13 +34,17 @@
 
 <body>
 	<div id="wrap" class="bgColor">
-		<div class="clr over video" id="video1">
+<!-- 		<div class="clr over video" id="video1">
 
-		</div> 
+		</div>  -->
 <!--   <div class="clr over video" id="video2">
   	<video src="https://outin-12f4575a97d211e9b81300163e1c8a9c.oss-cn-shanghai.aliyuncs.com/3112c0708891467cbc95eb148ec55f11/12dfa2ef31f5453fbe0bbe47ee76a3b0-4243d5c4f601b2e22d0b433739cc9e21-fd.mp4" type="video/mp4" id="player1"  poster="images/cblx.jpg"  autoplay="autoplay" loop="loop"
   	controls="controls" preload="none"></video>
   </div>  -->
+		
+	<div class="clr over video" id="video2">
+	<video :src="url" type="video/mp4" ref='video' id="player1" loop="loop" :poster="img" controls="controls" preload="ture"></video>
+	</div>
 </div>
 
 <script src="js/jquery.min.js"></script>
